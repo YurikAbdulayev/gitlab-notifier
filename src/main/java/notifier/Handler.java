@@ -1,6 +1,7 @@
 package notifier;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -28,7 +29,12 @@ public class Handler {
         String body = request.body();
         System.out.println(body);
         JsonObject jsonObject = new Gson().fromJson(body, JsonObject.class);
-        String state = jsonObject.get("object_attributes").toString();
+        String state = jsonObject
+                .get("object_attributes")
+                .getAsJsonObject()
+                .get("state")
+                .toString();
+
         System.out.println(state);
         return sendMsgToSlack();
     }
