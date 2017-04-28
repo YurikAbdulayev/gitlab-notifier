@@ -1,1 +1,1 @@
-web: java -cp target/classes:target/dependency/notifier/StartServer
+web: java $JAVA_OPTS -jar target/notifier-1.0-jar-with-dependencies.jar
