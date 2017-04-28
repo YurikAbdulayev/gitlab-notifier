@@ -50,7 +50,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>Main</mainClass>
+							<mainClass>notifier/StartServer</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
