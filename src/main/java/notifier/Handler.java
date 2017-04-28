@@ -17,7 +17,7 @@ public class Handler {
 
     void watch() {
         port(getHerokuAssignedPort());
-        get("/hello", (req, res) -> "Hello World");
+        get("/", (req, res) -> "Hello World");
         get("/msg", (request, response) -> parseRequestData(request));
         post("msg", (request, response) -> parseRequestData(request));
     }
