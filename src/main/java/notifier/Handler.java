@@ -28,7 +28,7 @@ public class Handler {
         String body = request.body();
         System.out.println(body);
         JsonObject jsonObject = new Gson().fromJson(body, JsonObject.class);
-        String state = jsonObject.get("state").toString();
+        String state = jsonObject.get("object_attributes").toString();
         System.out.println(state);
         return sendMsgToSlack();
     }
