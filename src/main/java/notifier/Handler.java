@@ -23,7 +23,8 @@ public class Handler {
     }
 
     private String parseRequestData(Request request) {
-        System.out.println("ok");
+        String body = request.body();
+        System.out.println(body);
         return sendMsgToSlack();
     }
 
